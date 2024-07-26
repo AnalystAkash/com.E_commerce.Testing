@@ -4,9 +4,6 @@ public class Homepage {
 	
 	
 	
-	public static String url() {
-		String ABC = "https://www.flipkart.com/";
-		return ABC;
-	}
+	
 
 }
