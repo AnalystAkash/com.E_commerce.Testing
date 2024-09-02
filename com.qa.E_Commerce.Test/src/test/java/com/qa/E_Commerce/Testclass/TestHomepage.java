@@ -36,40 +36,46 @@ public class TestHomepage {
 	
 	@Test(priority=1)
      
-	public void element() throws IOException {
-	 this.driver.findElement(By.cssSelector("img[title='Flipkart']")).click();
+	public void Login() throws IOException {
+	 driver.findElement(By.cssSelector("input[id='user-name']")).sendKeys("standard_user");
+	 driver.findElement(By.cssSelector("input[id='password']")).sendKeys("secret_sauce");
+	 driver.findElement(By.cssSelector("input[id='login-button']")).submit();
 	 
 	 //BrowserActivity.Snapshot();
 		
 	}
 	
 	@Test(priority=2)
-	public void Searchbar() {
-		driver.findElement(By.cssSelector("input.Pke_EE")).sendKeys("iphone13");
-		driver.findElement(By.cssSelector("button._2iLD__")).click();
+	public void Productselect() {
+		driver.findElement(By.cssSelector("button[name='add-to-cart-sauce-labs-backpack']")).click();
+		driver.findElement(By.cssSelector("button[name='add-to-cart-sauce-labs-bike-light']")).click();
+		driver.findElement(By.cssSelector("a.shopping_cart_link")).click();
 		
 	}
 	
 	
 	@ Test(priority=3)
-	public void item1() {
-		driver.findElement(By.xpath("//div[normalize-space()='Apple iPhone 13 (Green, 128 GB)']")).click();	
+	public void checkout() {
+		
+//		BrowserActivity.childpopup();
+		driver.findElement(By.cssSelector("button[name='checkout']")).click();	
 
 	}
 	
 	@Test(priority=4)
-	public void buy() throws InterruptedException {
-		Thread.sleep(5000);
+	public void checkoutinformation() {
 		
-		//BrowserActivity.childpopup();
-		driver.findElement(By.cssSelector("AFOXgu")).sendKeys("415403");
+		
+		driver.findElement(By.cssSelector("input[id='first-name']")).sendKeys("Akash");
+		driver.findElement(By.cssSelector("input[id='last-name']")).sendKeys("Dinde");
+		driver.findElement(By.cssSelector("input[id='postal-code']")).sendKeys("415409");
+		driver.findElement(By.cssSelector("input[id='continue']")).click();
 	}
 	
-//	@Test(priority=5)
-//	public void buy1() {
-//		driver.findElement(By.xpath("//input[@class='r4vIwl Jr-g+f']")).sendKeys("8329304919");
-//		driver.findElement(By.xpath("//button[@class='QqFHMw YhpBe+ _7Pd1Fp']")).click();
-//		}
+	@Test(priority=5)
+	public void buy1() {
+		driver.findElement(By.cssSelector("button[id='finish']")).click();
+		}
 	
 }
 

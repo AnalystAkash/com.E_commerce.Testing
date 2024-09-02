@@ -35,7 +35,7 @@ public class BrowserActivity {
 		
 	
 	public static String url() {
-		String URL = "https://www.flipkart.com/";
+		String URL = "https://www.saucedemo.com/";
 		return URL;
 	}
 	
